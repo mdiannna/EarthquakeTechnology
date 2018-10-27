@@ -52,6 +52,15 @@
 <!-- <li><a href="{{ url('/home') }}">Home</a></li> -->
 <li><a href="{{ url('/admin') }}">Dashboard</a></li>
 <li><a href="{{ route('logs') }}">Logs</a></li>
+<li><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a></li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
 @else
 <li><a href="{{ route('login') }}">Login</a></li>
 <li><a href="{{ route('register') }}">Register</a></li>

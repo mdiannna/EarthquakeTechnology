@@ -43,23 +43,16 @@ Also, it is provides disaster relief and alarm solutions to keep people in the h
       <div class="col-xs-12 col-md-6">
         <div class="about-text">
           <h2>Who We Are</h2>
-          <p>We are the team Next home, that builds the next smart home for you. We put a lot of passion in what we do and we are having a lot of fun this weekend</p>
-          <h3>What we did?</h3>
+          <p>Our amazing team builds the next smart home for you. We put a lot of passion in what we do and we are having a lot of fun this weekend</p>
+          <h3>Team members</h3>
           <div class="list-style">
-            <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
               <ul>
-                <li>Accelerometer</li>
-                <li>Gas sensor</li>
-                <li>CO2 sensor</li>
-                <li>Temperature sensor</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 col-sm-6 col-xs-12">
-              <ul>
-                <li>Distance sensor</li>
-                <!-- <li>Satisfied Customers</li> -->
-                <!-- <li>Project Management</li> -->
-                <!-- <li>Affordable Pricing</li> -->
+                 <li><strong>Marusic Diana</strong> [Backend and AI]
+                <li><strong>Popa Vlad</strong> [JavaScript and AI]</li>
+                <li><strong>Cotov Anastasia</strong> [Embedded apps engineer]</li>
+                <li><strong>Lazar Iulian</strong> [Hardware engineer]</li>
+                <li><strong>Arsene Stefan</strong> [Hardware engineer]</li>
               </ul>
             </div>
           </div>
