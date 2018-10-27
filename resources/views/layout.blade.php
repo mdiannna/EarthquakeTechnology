@@ -10,7 +10,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css', true)}}">
+        <!-- <link rel="stylesheet" type="text/css" href="{{asset('css/style.css', true)}}"> -->
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
