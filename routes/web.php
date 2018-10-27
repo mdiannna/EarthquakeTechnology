@@ -21,3 +21,8 @@ Route::get('/post/view', 'TestServerController@viewPost');
 Route::get('/post/view/raw', 'TestServerController@viewRawPost');
 
 Route::post('/post', 'TestServerController@testPost');
+
+Route::get('/users', 'UsersController@view');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
