@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -18,10 +19,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ url('/admin') }}">Dashboard</a>
+                        <a href="{{ route('logs') }}">Logs</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
-                        <a href="{{ route('logs') }}">Logs</a>
                     @endauth
                 </div>
             @endif
