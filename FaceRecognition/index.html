@@ -15,14 +15,14 @@
 	<script type="text/javascript">
 		// // get images from the folder
 // const MODEL_URL = '/models'
-// await faceapi.loadSsdMobilenetv1Model(MODEL_URL)
-// await faceapi.loadFaceLandmarkModel(MODEL_URL)
-// await faceapi.loadFaceRecognitionModel(MODEL_URL)
+//  faceapi.loadSsdMobilenetv1Model(MODEL_URL)
+//  faceapi.loadFaceLandmarkModel(MODEL_URL)
+//  faceapi.loadFaceRecognitionModel(MODEL_URL)
 
 // // get infos about an input image
 const input = document.getElementById('myImage')
-let fullFaceDescriptions = await faceapi.detectAllFaces(input)
-const detections = await faceapi.detectAllFaces(input)
+let fullFaceDescriptions =  faceapi.detectAllFaces(input)
+const detections =  faceapi.detectAllFaces(input)
 
 // resize the detected boxes in case your displayed image has a different size then the original
 const detectionsForSize = detections.map(det => det.forSize(input.width, input.height))
@@ -35,12 +35,12 @@ faceapi.drawDetection(canvas, detectionsForSize, { withScore: true })
 // // put some labels on images/faces
 // const labels = ['image_1', 'image_2', 'image_3', 'image_4']
 
-// const labeledFaceDescriptors = await Promise.all(
+// const labeledFaceDescriptors =  Promise.all(
 // 	labels.map(async label => {
 // 		const imgUrl = '${label}.png'
-// 		const img = await faceapi.fetchImage(imgUrl)
+// 		const img =  faceapi.fetchImage(imgUrl)
 
-// 		const fullFaceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
+// 		const fullFaceDescription =  faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
 
 // 		if(!fullFaceDescription) {
 // 			throw new Error('No faces detected for ${label}')
