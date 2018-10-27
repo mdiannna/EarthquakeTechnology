@@ -33,15 +33,17 @@ class SensorDataCrudController extends CrudController
         */
 
          $this->crud->addColumn([
-            'name'  => 'id',
+            'name'  => 'sensor_id',
             'label' => 'Sensor id',
             'type'  => 'text', 
         ]);
 
+
+
         $this->crud->addColumn([
     'label' => "Sensor", 
    'type' => "select",
-   'name' => 'sensor_id', 
+   'name' => 'sensor', 
    'entity' => 'sensor', 
    'attribute' => "name", 
    'model' => "App\Models\Sensor",

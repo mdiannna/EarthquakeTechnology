@@ -62,8 +62,8 @@
                                         @csrf
                                     </form>
 @else
-<li><a href="{{ route('login') }}">Login</a></li>
-<li><a href="{{ route('register') }}">Register</a></li>
+<li><a href="{{ url('/admin/login') }}">Login</a></li>
+<li><a href="{{  url('/admin/register')  }}">Register</a></li>
 @endauth
 <!-- 
         <li><a href="#about" class="page-scroll">About</a></li>
