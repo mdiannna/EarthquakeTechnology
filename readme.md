@@ -29,5 +29,6 @@ Live demo (will be periodically updated): https://fathomless-citadel-40087.herok
 | POST |  /device/<device_id>/<user_id> | Post data from a device with authentified user|
 | GET |  /device/<device_id>/view | View data from a device |
 | GET |  /device/<device_id>/<user_id>/view | View data from a device with auth user|
+| GET |  /logs | View logs|
 
 
