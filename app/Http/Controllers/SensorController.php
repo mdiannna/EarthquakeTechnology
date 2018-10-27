@@ -18,4 +18,15 @@ class SensorController extends Controller
         
         return view('sensors.view', ['id' => $id]);
     }
+
+    public function sendData($id, Request $request) {
+    	$data = json_encode($request->all());
+		
+		Log::info("New GET request from sensor " .$id . "   Date:" . now());
+		Log::info($data);
+        // return  response()->json(['state' => 'success']);
+        
+        // return view('sensors.view', ['id' => $id]);
+        return  response()->json(['state' => 'success']);
+    }
 }
