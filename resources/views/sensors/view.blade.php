@@ -40,7 +40,6 @@
 
 		    </div><!-- /.box-footer-->
 		  </div><!-- /.box -->
-		  </form>
 	</div>
 </div>
 @endsection

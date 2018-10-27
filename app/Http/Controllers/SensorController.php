@@ -21,7 +21,6 @@ class SensorController extends Controller
 
     public function sendData($id, Request $request) {
     	$data = json_encode($request->all());
-// dd($request->data);
         $sensorData = new SensorData;
         $sensorData->val1 = $request->data;
         $sensorData->val2 = $request->data2;
@@ -38,5 +37,9 @@ class SensorController extends Controller
         
         // return view('sensors.view', ['id' => $id]);
         return  response()->json(['state' => 'success']);
+    }
+
+    public function allDevices() {
+        return view('sensors.all');
     }
 }
