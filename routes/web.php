@@ -26,3 +26,5 @@ Route::get('/users', 'UsersController@view');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/test', 'TestServerController@testGetSuccessMessage')->name('test');

@@ -33,4 +33,8 @@ class TestServerController extends Controller
     	return $data;
     	// return view('post', $data);
     }
+
+    public function testGetSuccessMessage() {
+        return "Bravo Nastea!";
+    }
 }
