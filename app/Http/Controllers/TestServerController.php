@@ -38,6 +38,6 @@ class TestServerController extends Controller
 
     public function testGetSuccessMessage() {
         Log::info("New request " . now());
-        return "Bravo Nastea!";
+        return  response()->json(['state' => 'success']);
     }
 }
