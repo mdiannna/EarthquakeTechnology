@@ -31,7 +31,7 @@ Also, it is provides disaster relief and alarm solutions to keep people in the h
         <h3>Our code is open source - you have the chance to view it for free!</h3>
         <!-- <p>Get started today and complete our form to request your free estimate</p> -->
       </div>
-      <div class="col-xs-12 col-md-4 text-center"><a href="https://github.com/jshacks/jshacks2018-next-home" class="btn btn-custom btn-lg page-scroll">View code</a></div>
+      <div class="col-xs-12 col-md-4 text-center"><a href="https://github.com/jshacks/jshacks2018-next-home" class="btn btn-custom btn-lg page-scroll" target="_blank">View code</a></div>
     </div>
   </div>
 </div>
@@ -50,9 +50,9 @@ Also, it is provides disaster relief and alarm solutions to keep people in the h
               <ul>
                  <li><strong>Marusic Diana</strong> [Backend and AI]
                 <li><strong>Popa Vlad</strong> [JavaScript and AI]</li>
-                <li><strong>Cotov Anastasia</strong> [Embedded apps engineer]</li>
-                <li><strong>Lazar Iulian</strong> [Hardware engineer]</li>
-                <li><strong>Arsene Stefan</strong> [Hardware engineer]</li>
+                <li><strong>Cotov Anastasia</strong> [Embedded Apps Engineer]</li>
+                <li><strong>Lazar Iulian</strong> [Hardware Engineer]</li>
+                <li><strong>Arsene Stefan</strong> [Hardware Engineer]</li>
               </ul>
             </div>
           </div>
@@ -69,44 +69,29 @@ Also, it is provides disaster relief and alarm solutions to keep people in the h
     </div>
     <div class="row">
       <div class="col-md-4">
-        <div class="service-media"> <img src="img/services/service-1.jpg" alt=" "> </div>
+        <div class="service-media"> <img src="img/sensors/sensor1.gif" alt=" "> </div>
         <div class="service-desc">
-          <h3>Accelerometer</h3>
+          <h3>MPU6050 - Accelerometer+gyroscope</h3>
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p> -->
         </div>
       </div>
       <div class="col-md-4">
-        <div class="service-media"> <img src="img/services/service-2.jpg" alt=" "> </div>
+        <div class="service-media"> <img src="img/sensors/sensor2.gif" alt=" "> </div>
         <div class="service-desc">
           <h3>Temperature sensor</h3>
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
         </div>
       </div>
       <div class="col-md-4">
-        <div class="service-media"> <img src="img/services/service-3.jpg" alt=" "> </div>
+        <div class="service-media"> <img src="img/sensors/sensor3.gif" alt=" "> </div>
+        
         <div class="service-desc">
           <h3>Distance sensor</h3>
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p> -->
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="service-media"> <img src="img/services/service-4.jpg" alt=" "> </div>
-        <div class="service-desc">
-          <h3>CO2 sensor</h3>
-          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p> -->
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-media"> <img src="img/services/service-5.jpg" alt=" "> </div>
-        <div class="service-desc">
-          <h3>Gas sensor</h3>
-      <!--     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p> -->
-        </div>
-      </div>
-      
-    </div>
+    
   </div>
 </div>
 
