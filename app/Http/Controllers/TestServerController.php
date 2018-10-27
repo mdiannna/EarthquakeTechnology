@@ -18,15 +18,15 @@ class TestServerController extends Controller
     	$data = json_encode($request->all());
     	$request->session()->put('data', $data);
     	$request->session()->put('data', 'hello');
+        Log::info("New POST request " . now());
+        Lg::info($request->all());
 
-    	return "success!!!!!!!1";
-    	// dd();
+        return "success!!!!!!!1";
+        // dd();
     }
 
     public function viewPost(TestServerRequest $request) {
-    	$data = json_encode($request->session('data'));
-        Log::info("New POST request " . now());
-
+        $data = json_encode($request->session('data'));
     	return view('post', compact('data'));
     }
 
