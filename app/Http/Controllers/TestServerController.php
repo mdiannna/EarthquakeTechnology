@@ -25,6 +25,7 @@ class TestServerController extends Controller
 
     public function viewPost(TestServerRequest $request) {
     	$data = json_encode($request->session('data'));
+        Log::info("New POST request " . now());
 
     	return view('post', compact('data'));
     }
@@ -37,7 +38,7 @@ class TestServerController extends Controller
     }
 
     public function testGetSuccessMessage() {
-        Log::info("New request " . now());
+        Log::info("New GET request " . now());
         return  response()->json(['state' => 'success']);
     }
 }
