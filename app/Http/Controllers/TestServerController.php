@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TestServerRequest;
+use Illuminate\Support\Facades\Log;
+
 
 class TestServerController extends Controller
 {
@@ -35,6 +37,7 @@ class TestServerController extends Controller
     }
 
     public function testGetSuccessMessage() {
+        Log::info("New request " . now());
         return "Bravo Nastea!";
     }
 }

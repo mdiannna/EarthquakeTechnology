@@ -28,3 +28,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', 'TestServerController@testGetSuccessMessage')->name('test');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
