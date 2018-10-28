@@ -50,3 +50,6 @@ Route::get("/light/set/{intensity}", 'LightController@setIntensity');
 Route::post("/light/set/{intensity}", 'LightController@setIntensity');
 
 
+Route::get("/energy", 'EnergyController@getEnergy');
+
+
