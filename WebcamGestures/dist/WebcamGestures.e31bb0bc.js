@@ -50146,6 +50146,7 @@ var upButton = document.getElementById('up');
 var downButton = document.getElementById('down');
 var leftButton = document.getElementById('left');
 var rightButton = document.getElementById('right');
+var rectangle = document.getElementById('myRectangle');
 var thumbDisplayed = {};
 
 function handler(_x) {
