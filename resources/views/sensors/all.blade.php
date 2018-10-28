@@ -167,7 +167,7 @@
 	var dom = document.getElementsByClassName("container");
 	var energyDom = document.getElementById("energy_container");
 
-	var colors = ["red", "blue", "green"];
+	var colors = ["red", "blue", "green", "red", "blue", "orange", "green", "red", "blue", "green", "red", "blue", "green", "orange"];
 
 	var options = [null, null, null];
 
