@@ -53,3 +53,6 @@ Route::post("/light/set/{intensity}", 'LightController@setIntensity');
 Route::get("/energy", 'EnergyController@getEnergy');
 
 
+Route::get("/sensors/train", 'NetworkController@trainSensors');
+
+

@@ -7,3 +7,4 @@
 
 
 <li><a href='{{ url('/devices') }}'><i class='fa fa-list'></i> <span>All devices</span></a></li>
+<li><a href='{{ url('/sensors/train') }}'><i class='fa fa-list'></i> <span>Train sensor</span></a></li>
