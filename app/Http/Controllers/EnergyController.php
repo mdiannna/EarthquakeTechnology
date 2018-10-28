@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Light;
 
-class LightController extends Controller
+class EnergyController extends Controller
 {
     
-    public function getIntensity() {
-    	// return 1;
-    	$light = Light::find(1);
-
-        return  response()->json($light->intensity);
+    public function getEnergy() {
+	    $energyData = [];
+	    for($i=0; $i<10; $i++) {
+	    	$energyData[$i] = rand(10, 2000);
+	    }
+        return  $energyData;
     }
 
     public function setIntensity($intensity, Request $request) {

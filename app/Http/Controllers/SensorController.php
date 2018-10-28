@@ -7,6 +7,8 @@ use App\Http\Requests\TestServerRequest;
 use Illuminate\Support\Facades\Log;
 use App\Models\Sensor;
 use App\Models\SensorData;
+use App\Models\Light;
+
 
 class SensorController extends Controller
 {
@@ -41,7 +43,9 @@ class SensorController extends Controller
     }
 
     public function allDevices() {
-        return view('sensors.all');
+        $intensity = Light::find(1)->intensity;
+
+        return view('sensors.all', ['intensity' => $intensity]);
     }
 
     public function data($id) {
