@@ -192,7 +192,7 @@
 
 
 	var optionTest = {
-			color: "yellow",
+			color: "orange",
 			xAxis: {
 				type: 'category',
 				// data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -210,7 +210,7 @@
 
 
 		var optionsEnergy = {
-			color: "yellow",
+			color: "orange",
 			xAxis: {
 				type: 'category',
 				// data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
