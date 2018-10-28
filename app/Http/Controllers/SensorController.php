@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\TestServerRequest;
 use Illuminate\Support\Facades\Log;
+use App\Models\Sensor;
 use App\Models\SensorData;
 
 class SensorController extends Controller
@@ -41,5 +42,28 @@ class SensorController extends Controller
 
     public function allDevices() {
         return view('sensors.all');
+    }
+
+    public function data($id) {
+        return SensorData::where('sensor_id', $id)->orderByDesc('created_at')->limit(1)->get()->toJson();
+    }
+
+    public function values($id) {
+        return SensorData::where('sensor_id', $id)->orderByDesc('created_at')->limit(10)->pluck('val1')->toJson();
+    }
+
+    public function allValues() {
+        $data = [];
+        $sensorIds = Sensor::all()->pluck('id');
+
+        
+        foreach($sensorIds as $sensorId) {
+            $values = SensorData::where('sensor_id', $sensorId)->orderByDesc('created_at')->limit(10)->pluck('val1');
+
+            array_push($data, $values);
+        }
+
+        return $data;
+        // return SensorData::where('sensor_id', $id)->orderByDesc('created_at')->limit(10)->pluck('val1')->toJson();
     }
 }
