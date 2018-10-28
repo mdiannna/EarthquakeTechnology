@@ -244,7 +244,8 @@
 	}
 
 	function getData() {
-		axios.get('http://127.0.0.1:8000/devices/values')
+		// axios.get('http://127.0.0.1:8000/devices/values')
+		axios.get("{{env('SERVER_URL')}}/devices/values")
 		.then((response) => {
 			data = response.data;
 			for(var k=0; k<data.length; k++) {
@@ -264,7 +265,7 @@
 
 
 	function getLight() {
-		axios.get('http://127.0.0.1:8000/light')
+		axios.get("{{env('SERVER_URL')}}/light")
 		.then((response) => {
 			light = response.data;
 			document.getElementById("bec").src="img/bec/" + light + ".png";
@@ -281,7 +282,9 @@
 
 
 	function getEnergy() {
-		axios.get('http://127.0.0.1:8000/energy')
+		axios.get("{{env('SERVER_URL')}}/energy")
+		
+		// axios.get('http://127.0.0.1:8000/energy')
 		.then((response) => {
 			energy = response.data;
 			// document.getElementById("bec").src="img/bec/" + light + ".png";
