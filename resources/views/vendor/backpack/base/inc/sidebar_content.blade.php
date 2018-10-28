@@ -4,3 +4,6 @@
 <li><a href='{{ backpack_url('sensor') }}'><i class='fa fa-cog'></i> <span>Sensors</span></a></li>
 
 <li><a href='{{ backpack_url('sensor-data') }}'><i class='fa fa-tag'></i> <span>Sensor data</span></a></li>
+
+
+<li><a href='{{ url('/devices') }}'><i class='fa fa-list'></i> <span>All devices</span></a></li>
