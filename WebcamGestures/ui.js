@@ -71,6 +71,8 @@ const downButton = document.getElementById('down');
 const leftButton = document.getElementById('left');
 const rightButton = document.getElementById('right');
 
+const rectangle = document.getElementById('myRectangle');
+
 const thumbDisplayed = {};
 
 async function handler(label) {
