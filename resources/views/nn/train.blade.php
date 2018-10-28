@@ -1,33 +1,234 @@
+<!--
+Copyright 2018 Google LLC. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+==============================================================================
+-->
 <html>
-  <head>
-    <!-- Load TensorFlow.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> </script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Next Home Gesture Recognition</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-teal.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <script defer="" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="/css/styles.f712b6b4.css">
+</head>
+<body>
+  <header>
+    Turn your <b>Web Camera</b> into a light controller.
+  </header>
+  <div id="no-webcam">
+      No webcam found. <br>
+      To use this demo, use a device with a webcam.
+    </div>
+  <!-- Top -->
+  <div id="myRectangle-0">
+    <p>My Rectangle 0</p>
+  </div>
+<!--   <div id="myRectangle-1">
+    <p>My Rectangle 1</p>
+  </div>
 
-    <!-- Place your code in the script tag below. You can also use an external .js file -->
-    <script>
-      // Notice there is no 'import' statement. 'tf' is available on the index-page
-      // because of the script tag above.
+  <div id="myRectangle-2">
+    <p>My Rectangle 2</p>
+  </div>
 
-      // Define a model for linear regression.
-      const model = tf.sequential();
-      model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+  <div id="myRectangle-3">
+    <p>My Rectangle 3</p>
+  </div>
+ -->
 
-      // Prepare the model for training: Specify the loss and the optimizer.
-      model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
+  <div id="status">Loading mobilenet...</div>
 
-      // Generate some synthetic data for training.
-      const xs = tf.tensor2d([1, 2, 3, 4], [4, 1]);
-      const ys = tf.tensor2d([1, 3, 5, 7], [4, 1]);
+  <div class="controller-panels" id="controller" style="display:none">
 
-      // Train the model using the data.
-      model.fit(xs, ys, {epochs: 10}).then(() => {
-        // Use the model to do inference on a data point the model hasn't seen before:
-        // Open the browser devtools to see the output
-        model.predict(tf.tensor2d([5], [1, 1])).print();
-      });
-    </script>
-  </head>
+    <div class="panel training-panel">
 
-  <body>
-  </body>
+      <!-- Big buttons. -->
+      <div class="panel-row big-buttons">
+        <button id="train">
+          <img width="66" height="66" src="button.e29837f8.svg">
+          <span id="train-status">TRAIN MODEL</span>
+        </button>
+        <button id="predict">
+          <img width="66" height="66" src="button.e29837f8.svg">
+          <span>PLAY</span>
+        </button>
+      </div><!-- /.panel-row -->
+
+      <div class="panel-row params-webcam-row">
+
+        <!-- Hyper params. -->
+        <div class="hyper-params">
+
+          <!-- Learning rate -->
+          <div class="dropdown">
+            <label>Learning rate</label>
+            <div class="select">
+              <select id="learningRate">
+                <option value="0.00001">0.00001</option>
+                <option selected="" value="0.0001">0.0001</option>
+                <option value="0.01">0.001</option>
+                <option value="0.03">0.003</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Batch size -->
+          <div class="dropdown">
+            <label>Batch size</label>
+            <div class="select">
+              <select id="batchSizeFraction">
+                <option value="0.05">0.05</option>
+                <option value="0.1">0.1</option>
+                <option selected="" value="0.4">0.4</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Epochs -->
+          <div class="dropdown">
+            <label>Epochs</label>
+            <div class="select">
+              <select id="epochs">
+                <option value="10">10</option>
+                <option selected="" value="20">20</option>
+                <option value="40">40</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Hidden units -->
+          <div class="dropdown">
+            <label>Hidden units</label>
+            <div class="select">
+              <select id="dense-units">
+                <option value="10">10</option>
+                <option selected="" value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+          </div>
+
+        </div><!-- /.hyper-params -->
+
+        <div class="webcam-box-outer">
+          <div class="webcam-box-inner">
+            <video autoplay="" playsinline="" muted="" id="webcam" width="224" height="224"></video>
+          </div>
+        </div>
+
+      </div><!-- /.panel-row -->
+
+    </div><!-- /.panel -->
+
+    <div class="panel joystick-panel">
+
+      <div class="panel-row panel-row-top">
+
+        <div class="panel-cell panel-cell-left panel-cell-fill">
+          <p class="help-text">
+          Click to add the <br>
+          current camera <br>
+          view as an example <br>
+          for that control
+          </p>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-center">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width="224" height="224" id="up-thumb"></canvas>
+              </div>
+              <button class="record-button" id="up"><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="up-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-right panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+      </div><!-- /.panel-row -->
+      <div class="panel-row panel-row-middle">
+        <div class="panel-cell panel-cell-left">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width="224" height="224" id="left-thumb"></canvas>
+              </div>
+              <button class="record-button" id="left"><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="left-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-center panel-cell-fill">
+          <!-- <img height="108" width="129" src="./images/joystick.png" /> -->
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-right">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width="224" height="224" id="right-thumb"></canvas>
+              </div>
+              <button class="record-button" id="right"><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="right-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+      </div><!-- /.panel-row -->
+
+      <div class="panel-row panel-row-bottom">
+
+        <div class="panel-cell panel-cell-left panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-center">
+          <div class="thumb-box">
+            <div class="thumb-box-outer">
+              <div class="thumb-box-inner">
+                <canvas class="thumb" width="224" height="224" id="down-thumb"></canvas>
+              </div>
+              <button class="record-button" id="down"><span>Add Sample</span></button>
+            </div>
+            <p>
+              <span id="down-total">0</span> examples
+            </p>
+          </div>
+        </div><!-- ./panel-cell -->
+
+        <div class="panel-cell panel-cell-right panel-cell-fill">
+        </div><!-- ./panel-cell -->
+
+      </div><!-- /.panel-row -->
+
+
+    </div><!-- /.panel -->
+
+  </div><!-- /#controller -->
+
+  <script src="/js/webcam-transfer-learning.9d761d12.js"></script>
+</body>
 </html>
