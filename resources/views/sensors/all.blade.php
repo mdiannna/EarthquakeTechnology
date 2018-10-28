@@ -64,6 +64,36 @@
 	    <!-- </div> -->
 	</div>
 	@endforeach
+
+
+	<div class="col-md-6 col-lg-6">
+		<div class="box">
+			<div class="box-header with-border">
+				<!-- Single button -->
+				<div class="btn-group pull-right">
+					  <!-- <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					   <span>{{ $sensor->name }}</span>
+					</button> -->
+					<!--   <ul class="dropdown-menu">
+					 <li><a href="">dfgsdfg</a></li>
+					</ul> -->
+				</div>
+				<h3 class="box-title" style="line-height: 30px;">{{$sensor->name }}</h3>
+				<!-- <h3 class="box-title">Sensor</h3> -->
+			</div>
+			<div class="box-body row display-flex-wrap" style="display: flex;flex-wrap: wrap;">
+				<div class="col-md-12 col-xs-12 col-lg-12">
+					<img src="{{assets('img/bec.png')}}">
+			
+	            </div><!-- /.box-body -->
+
+	            <div class="box-footer">
+	
+	            </div><!-- /.box-footer-->
+	       	</div><!-- /.box -->
+
+	    <!-- </div> -->
+	</div>
 </div>
 
 
@@ -110,7 +140,8 @@
 				type: 'value'
 			},
 			series: [{
-				data: [120 + i, 932 + i, 901, 934, 1290, 1330, 1320 + i*300, 100, 100, 100],
+				// data: [120 + i, 932 + i, 901, 934, 1290, 1330, 1320 + i*300, 100, 100, 100],
+				data: [0,0,0,0,0,0,0,0,0,0],
 				type: 'line'
 			}]
 		};
@@ -128,7 +159,8 @@
 				type: 'value'
 			},
 			series: [{
-				data: [120 + i, 932 + i, 901, 934, 1290, 1330, 1320 + i*300, 100, 100, 100],
+				// data: [120 + i, 932 + i, 901, 934, 1290, 1330, 1320 + i*300, 100, 100, 100],
+				data: [0,0,0,0,0,0,0,0,0,0],
 				type: 'line'
 			}]
 		};
