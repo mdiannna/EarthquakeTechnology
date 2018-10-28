@@ -58,11 +58,11 @@ limitations under the License.
       <!-- Big buttons. -->
       <div class="panel-row big-buttons">
         <button id="train">
-          <img width="66" height="66" src="button.e29837f8.svg">
+          <img width="66" height="66" src="/img/button.e29837f8.svg">
           <span id="train-status">TRAIN MODEL</span>
         </button>
         <button id="predict">
-          <img width="66" height="66" src="button.e29837f8.svg">
+          <img width="66" height="66" src="/img/button.e29837f8.svg">
           <span>PLAY</span>
         </button>
       </div><!-- /.panel-row -->
