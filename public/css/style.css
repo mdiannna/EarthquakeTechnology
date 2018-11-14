@@ -7,6 +7,9 @@ body, html {
 	width: 100% !important;
 	height: 100% !important;
 }
+body {
+	margin-top:100px;
+}
 h2 {
 	font-family: 'Montserrat', sans-serif;
 	margin: 0 0 20px 0;
@@ -73,7 +76,7 @@ hr {
 }
 #menu a.navbar-brand {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 32px;
+	font-size: 22px;
 	font-weight: 700;
 	color: #1f386e;
 	text-transform: uppercase;
@@ -85,9 +88,9 @@ hr {
 	color: #1f386e;
 	font-size: 14px;
 	font-weight: 700;
-	padding: 8px 2px;
+	padding: 8px 0px;
 	border-radius: 0;
-	margin: 9px 20px 0 20px;
+	margin: 9px 10px 0 10px;
 }
 #menu.navbar-default .navbar-nav > li > a:hover {
 	color: #ce2a36;
@@ -169,7 +172,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	display: table;
 	width: 100%;
 	padding: 0;
-	background: url(../img/intro-bg.jpg) center center no-repeat;
+	/*background: url(../img/intro-bg.jpg) center center no-repeat;*/
+	background: url(../img/home2.jpeg) center center no-repeat;
 	background-color: #e5e5e5;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -514,4 +518,8 @@ color: #777;
 
 .text-big {
 	font-size: 18px;
+}
+
+.alert-map {
+	color:red !important;
 }

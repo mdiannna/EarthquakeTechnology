@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Next home</title>
+<title>Earthquake Awareness</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -41,13 +41,47 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top">Next home</a>
+      <a class="navbar-brand page-scroll" href="/">Earthquake Awareness</a>
       <!-- <div class="phone"><span>Call Today</span>320-123-4321</div> -->
     </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+
+          <li class="nav-item">
+          <a class="nav-link text-danger alert-map" href="{{route('alert-map')}}">Sunt în pericol</a>
+        </li>
+
+        @auth
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Echipe de intervenţoe
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{route('alert-info')}}">View alerts</a>
+            <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item" href="/alert-info/buildings-collapsed">Collapsed buildings</a> -->
+            <a class="dropdown-item" href="{{route('alert-info.buildings.list')}}">Buildings info</a>
+          </div>
+        </li>
+        @endauth
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cutremure recente
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/earthquakes/all">Worldwide</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{route('earthquakes.romania')}}">Romania</a>
+            <a class="dropdown-item" href="{{route('earthquakes.romania.past-hour')}}">Romania - past hour</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{{route('before-earthquake')}}">Pregăteşte-te</a>
+        </li>
+
 @auth
 <!-- <li><a href="{{ url('/home') }}">Home</a></li> -->
 <li><a href="{{ url('/admin') }}">Dashboard</a></li>
@@ -61,10 +95,15 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
+
 @else
 <li><a href="{{ url('/admin/login') }}">Login</a></li>
-<li><a href="{{  url('/register')  }}">Register</a></li>
+<li><a href="{{  url('/register')  }}">Înregistrează-te</a></li>
 @endauth
+
+    
+
 <!-- 
         <li><a href="#about" class="page-scroll">About</a></li>
         <li><a href="#services" class="page-scroll">Services</a></li>
@@ -84,7 +123,7 @@
     <!-- Footer Section -->
 <div id="footer">
   <div class="container text-center">
-    <p>&copy; Next home.  Design by <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a></p>
+    <p>&copy; Earthquake Awareness.  </p>
   </div>
 </div>
 <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 

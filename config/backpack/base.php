@@ -12,14 +12,14 @@ return [
     */
 
     // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'Next home',
+    'project_name' => 'Earthquake Awareness',
 
     // Menu logos
-    'logo_lg'   => '<b>Next home</b>',
+    'logo_lg'   => '<b>Earthquake Awareness</b>',
     'logo_mini' => '<b>NH</b>p',
 
     // Developer or company name. Shown in footer.
-    'developer_name' => 'Next Team',
+    'developer_name' => 'Fs0ciety',
 
     // Developer website. Link in footer.
     'developer_link' => 'https://github.com/jshacks/jshacks2018-next-home',
