@@ -49,9 +49,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
 
-          <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link text-danger alert-map" href="{{route('alert-map')}}">Sunt în pericol</a>
         </li>
+
+        
 
         @auth
         <li class="nav-item dropdown">
@@ -77,6 +79,9 @@
             <a class="dropdown-item" href="{{route('earthquakes.romania')}}">Romania</a>
             <a class="dropdown-item" href="{{route('earthquakes.romania.past-hour')}}">Romania - past hour</a>
           </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="{{route('seismic-alert-map')}}">Bulina rosie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="{{route('before-earthquake')}}">Pregăteşte-te</a>
