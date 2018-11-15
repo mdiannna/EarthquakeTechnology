@@ -39,10 +39,14 @@
 <div class="container pt-4 pb-4">
   <section class="section pt-3 pb-3">
     <div class="text-center">
-      <h1 class="text-center">Înainte de cutremure</h1>
+      <h1 class="text-center">Înainte de cutremur</h1>
       <h4 class="text-success"><strong>Cum te pregăteşti înainte de cutremur?</strong></h4>
       <p class="pt-3">Există câteva reguli simple să te pregăteşti de un cutremur. Vezi un video pentru a fi mai pregătit(ă)</p>
-    <a href="{{route('before-earthquake')}}" class="btn btn-success btn-lg">Vezi video</a>
+      <a href="{{route('before-earthquake')}}" class="btn btn-success btn-lg">Vezi video</a>
+
+      <h4 class="text-danger pt-3"><strong>Clădiri cu bulină roşie</strong></h4>
+      <p class="pt-3">Informează-te dacă stai într-un bloc cu grad înalt de risc seismic. Există o hartă a acestor clădiri din Buucreşti</p>
+      <a href="{{route('seismic-alert-map')}}" class="btn btn-danger btn-lg">Vezi harta</a>
 
     </div>
   </section>
@@ -64,35 +68,35 @@
   <section class="section pt-3 pb-3">
     <h1 class="text-center">După cutremur</h1>
     <div class="pt-3 pb-3 text-center">
-      <h4 class="text-danger"><strong>Alert map - send your location and problem to intervention teams</strong></h4>
-      <a href="{{route('alert-map')}}" class="btn btn-danger btn-lg">Alert! I am affected by the earthquake!</a>
+      <h4 class="text-danger"><strong>Harta alertelor - trimite locaţia ta pentru a ajuta echipele de intervenţie să te găsească</strong></h4>
+      <a href="{{route('alert-map')}}" class="btn btn-danger btn-lg">Sunt în pericol!</a>
     </div>
     <br>
 
-    <div class="pt-3 pb-3 text-center">
+ <!--    <div class="pt-3 pb-3 text-center">
       <h4 class="text-info"><strong>Using AI to prioritize alerts for intervention teams </strong></h4>
       <p>We use IBM Natural Language Understanding to prioritize alerts for intervention teams based on sentiment and emotion analysis, tracking mostly the negative sentiment and emotions of fear during the earthquake </p>
       <a href="{{route('alert-info')}}" class="btn btn-info text-center"> View alerts</a>
-    </div>
+    </div> -->
 
-    <div class="pt-3 pb-3 text-center">
+<!--     <div class="pt-3 pb-3 text-center">
       <h4 class="text-primary"><strong>Intelligent Assistant to ease communication and determine needs</strong></h4>
       <p>IBM Watson Conversation AI provides a more natural way for people affected by the earthquake to send their needs to the intervention teams</p>
-      <!-- <a href="/watson-chat" class="btn btn-primary text-center"> Start chat</a> -->
+
       <a href="{{route('watson-ai')}}" class="btn btn-primary text-center"> Start chat</a>
     </div>
 
-    <div class="pt-3 pb-3 text-center">
-      <h4 class="text-warning"><strong>Tracking the most recent earthquakes</strong></h4>
-      <p>See a list of the most recent earthquakes in Romania and worldwide:</p>
-      <p>Source: <i>http://www.seismicportal.eu</i></p>
+ -->    <div class="pt-3 pb-3 text-center">
+      <h4 class="text-warning"><strong>Urmărim cele mai recente cutremure</strong></h4>
+      <p>Vezi lista celor mai recente cutremure în România şi în lume</p>
+      <p>Sursa: <i>http://www.seismicportal.eu</i></p>
       <div class="row text-center">
         <!-- <div class="col-md-6 md-offset-3"> -->
-          <div class="col-md-3 offset-md-3 pt-1 pb-1">
-            <a href="{{route('earthquakes.all')}}" class="btn btn-warning text-center"> Recent earthquakes worldwide</a>
+          <div class="col-md-3 offset-md-3 md-offset-3 pt-1 pb-1">
+            <a href="{{route('earthquakes.all')}}" class="btn btn-warning text-center"> Cutremure recente</a>
           </div>
           <div class="col-md-3 pt-1 pb-1">
-            <a href="{{route('earthquakes.romania')}}" class="btn btn-warning text-center"> Recent earthquakes in Romania</a>
+            <a href="{{route('earthquakes.romania')}}" class="btn btn-warning text-center"> Cutremure recente în Romania</a>
           </div>
         </div>        
       <!-- </div> -->
