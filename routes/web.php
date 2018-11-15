@@ -86,3 +86,9 @@ Route::get('/before-earthquake', ['as' => 'before-earthquake', 'uses' =>'BeforeE
 Route::get('/watson-ai', ['as' => 'watson-ai', 'uses' =>'WatsonAIController@index']);
 
 Route::get('/buildings-seismic-map', ['as' => 'seismic-alert-map', 'uses' =>'BuildingsSeismicAlertMapController@index']);
+
+
+//////////////////////////////////////
+
+
+Route::get('/sensors/alert-map', ['as' => 'sensors-alert-map', 'uses' => 'SensorController@alertMap']);

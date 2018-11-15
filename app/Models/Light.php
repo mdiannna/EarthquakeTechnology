@@ -7,7 +7,7 @@ use Backpack\CRUD\CrudTrait;
 
 class Light extends Model
 {
-    use CrudTrait;
+    // use CrudTrait;
 
     /*
     |--------------------------------------------------------------------------

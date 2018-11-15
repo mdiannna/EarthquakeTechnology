@@ -1,7 +1,6 @@
-<!-- @extends('backpack::layout') -->
 @extends('layout')
 
-@section('header')
+<!-- @section('header')
 <section class="content-header">
 	<h1>
 		<span class="text-capitalize">Sensor</span>
@@ -12,28 +11,16 @@
 </section>
 @endsection
 
-
+ -->
 
 @section('content')
-<div class="row">
+<div class="row container">
 	@foreach('App\Models\Sensor'::all() as $sensor)
 	<div class="col-md-6 col-lg-6">
-		<div class="box">
-			<div class="box-header with-border">
-				<!-- Single button -->
-				<div class="btn-group pull-right">
-					  <!-- <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					   <span>{{ $sensor->name }}</span>
-					</button> -->
-					<!--   <ul class="dropdown-menu">
-					 <li><a href="">dfgsdfg</a></li>
-					</ul> -->
-				</div>
-				<h3 class="box-title" style="line-height: 30px;">{{$sensor->name }}</h3>
-				<!-- <h3 class="box-title">Sensor</h3> -->
-			</div>
-			<div class="box-body row display-flex-wrap" style="display: flex;flex-wrap: wrap;">
-				<div class="col-md-12 col-xs-12 col-lg-12">
+		<h3>{{$sensor->name }}</h3>
+		<!-- <h3 class="box-title">Sensor</h3> -->
+		<!-- <div class="box-body row display-flex-wrap" style="display: flex;flex-wrap: wrap;"> -->
+			<div class="col-md-12 col-xs-12 col-lg-12">
 
 
 					@foreach('App\Models\SensorData'::where('sensor_id', $sensor->id)->orderBy('created_at', 'desc')->limit(1)->get() as $sensorData)
@@ -47,20 +34,18 @@
 						@endif
 
 	                @endforeach
-					<div class="container"></div>
+					<div class="sensor_container"></div>
 
-		    			<!-- <div class="implementations-chart-container">
+		    			<!-- <div class="implementations-chart-sensor_container">
 	                        <div id="implementations-report"></div>
 	                    </div> -->
 	                    <!-- <h1>Sensor 1</h1> -->
-	                </div>
+	                <!-- </div> -->
 	            </div><!-- /.box-body -->
 
-	            <div class="box-footer">
+	            <!-- <div class="box-footer"> -->
 	            	<p>Status: Active</p>
 
-	            </div><!-- /.box-footer-->
-	       	</div><!-- /.box -->
 
 	    <!-- </div> -->
 	</div>
@@ -117,7 +102,7 @@
 			<div class="box-body row display-flex-wrap" style="display: flex;flex-wrap: wrap;">
 				<div class="col-md-12 col-xs-12 col-lg-12">
 
-					<div id="energy_container"></div>
+					<div id="energy_sensor_container"></div>
 			
 	            </div><!-- /.box-body -->
 
@@ -148,12 +133,12 @@
 
 
 <style type="text/css">
-.container {
+.sensor_container {
 	width: 100%;
 	height:30vh;
 }
 
-#energy_container {
+#energy_sensor_container {
 	width: 100%;
 	height:30vh;
 }
@@ -165,8 +150,8 @@
 	var energy = [];
 
 
-	var dom = document.getElementsByClassName("container");
-	var energyDom = document.getElementById("energy_container");
+	var dom = document.getElementsByClassName("sensor_container");
+	var energyDom = document.getElementById("energy_sensor_container");
 
 	var colors = ["red", "blue", "green", "red", "blue", "orange", "green", "red", "blue", "green", "red", "blue", "green", "orange"];
 

@@ -7,7 +7,7 @@ use Backpack\CRUD\CrudTrait;
 
 class Sensor extends Model
 {
-    use CrudTrait;
+    // use CrudTrait;
 
     /*
     |--------------------------------------------------------------------------

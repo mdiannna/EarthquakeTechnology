@@ -70,4 +70,8 @@ class SensorController extends Controller
         return $data;
         // return SensorData::where('sensor_id', $id)->orderByDesc('created_at')->limit(10)->pluck('val1')->toJson();
     }
+
+    public function alertMap() {
+        return view('sensors.map');
+    }
 }
