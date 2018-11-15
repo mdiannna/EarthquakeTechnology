@@ -39,10 +39,10 @@
 <div class="container pt-4 pb-4">
   <section class="section pt-3 pb-3">
     <div class="text-center">
-      <h1 class="text-center">Pre-Eearthquake</h1>
-      <h4 class="text-success"><strong>How to prepare before an earthquake?</strong></h4>
-      <p class="pt-3">There are some simple rules that you can follow to prepare for the earthquake. Watch the video to see them</p>
-    <a href="{{route('before-earthquake')}}" class="btn btn-success btn-lg">Watch video</a>
+      <h1 class="text-center">Înainte de cutremure</h1>
+      <h4 class="text-success"><strong>Cum te pregăteşti înainte de cutremur?</strong></h4>
+      <p class="pt-3">Există câteva reguli simple să te pregăteşti de un cutremur. Vezi un video pentru a fi mai pregătit(ă)</p>
+    <a href="{{route('before-earthquake')}}" class="btn btn-success btn-lg">Vezi video</a>
 
     </div>
   </section>
@@ -50,18 +50,19 @@
   <hr>
 
   <section class="section pt-3 pb-3 text-center">
-    <h1 class="text-center">Mid-Earthquake</h1>
-    <h4 class="text-warning text-center"><strong>Sensors on buildings - collect data and send to intervention teams</strong></h4>
-    <p class="pt-3">We use Arduino boards, gyroscope sensors and Wi-Fi modules to collect data about buildings during an earthquake and notify the intervention teams and authorities about the damaged or even collapsed buildings.</p>
+    <h1 class="text-center">În timpul unui cutremur</h1>
+    <h4 class="text-warning text-center"><strong>Senzori pe clădiri - alertare preventivă + eficientizare intervenţie</strong></h4>
+    <p class="pt-3">Utilizăm plăcuţe Arduino, sensori accelerometri şi giroscop, sensori de gaz şi module Wi-fi pentru a colecta date despre gradul de afectare a clădirilor în timpul unui cutremur şi trimitem aceste date către echipele de intervenţie.
+    </p>
     
-    <a href="{{route('hardware.about')}}" class="btn btn-warning btn-lg">View more details about hardware</a>
+    <a href="{{route('hardware.about')}}" class="btn btn-warning btn-lg">Vezi mai multe detalii aici</a>
     
   </section>
 
   <hr>
 
   <section class="section pt-3 pb-3">
-    <h1 class="text-center">After Earthquake</h1>
+    <h1 class="text-center">După cutremur</h1>
     <div class="pt-3 pb-3 text-center">
       <h4 class="text-danger"><strong>Alert map - send your location and problem to intervention teams</strong></h4>
       <a href="{{route('alert-map')}}" class="btn btn-danger btn-lg">Alert! I am affected by the earthquake!</a>
@@ -151,8 +152,8 @@
             <div class="col-lg-12 col-sm-12 col-xs-12">
               <ul>
                  <li><strong>Marusic Diana</strong> [Backend şi Inteligenţă Artificială]
-                <li><strong>Cotov Anastasia</strong> [Embedded Apps Engineer şi Marketing (part-time 2h)]</li>
-                <li><strong>Popa Vlad</strong> [JavaScript şi Blockchain]</li>
+                <li><strong>Cotov Anastasia</strong> [Embedded Apps]</li>
+                <li><strong>Popa Vlad</strong> [Full stack şi Blockchain]</li>
                 <li><strong>Dobre Marius</strong> [Animatii 3D]</li>
                 <li><strong>Coroliova Aliona</strong> [Reserch şi business]</li>
               </ul>
