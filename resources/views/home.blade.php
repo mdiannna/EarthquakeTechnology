@@ -155,10 +155,10 @@
           <div class="list-style">
             <div class="col-lg-12 col-sm-12 col-xs-12">
               <ul>
-                 <li><strong>Marusic Diana</strong> [Backend şi Inteligenţă Artificială]
+                 <li><strong>Marusic Diana</strong> [Web development şi Inteligenţă Artificială]
                 <li><strong>Cotov Anastasia</strong> [Embedded Apps]</li>
                 <li><strong>Popa Vlad</strong> [Full stack şi Blockchain]</li>
-                <li><strong>Dobre Marius</strong> [Animatii 3D]</li>
+                <li><strong>Dobre Marius</strong> [Animaţii 3D]</li>
                 <li><strong>Coroliova Aliona</strong> [Reserch şi business]</li>
               </ul>
             </div>
