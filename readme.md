@@ -1,7 +1,4 @@
-# Next home project
-Our team develops a smart home assistant, that has accelerometer, gas, temperature, CO2 and other sensors, that helps predict and improve efficiency of the house in the future.
-
-Also, we are working on disaster relief and alarm solutions to keep people in the house safe.
+# Earthquake technology project
 
 ## Demo
 Live demo (will be periodically updated): https://fathomless-citadel-40087.herokuapp.com/
@@ -9,11 +6,11 @@ Live demo (will be periodically updated): https://fathomless-citadel-40087.herok
 
 
 ## Team
-- Marusic Diana [Backend and AI]
-- Popa Vlad [JavaScript and AI]
+- Marusic Diana [Web development and AI]
 - Cotov Anastasia [Embedded apps engineer]
-- Lazar Iulian [Hardware engineer]
-- Arsene Stefan [Hardware engineer]
+- Dobre Marius [3D animations]
+- Coroliova Aliona [Research and business]
+- Popa Vlad [Full stack and blockchain]
 
 
 
@@ -32,3 +29,5 @@ Live demo (will be periodically updated): https://fathomless-citadel-40087.herok
 | GET |  /logs | View logs|
 
 
+## Acknowledgements
+A big thank you to mentors from the ReRise NGO [http://rerise.org](http://rerise.org)
