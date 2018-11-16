@@ -145,6 +145,8 @@
   <div class="container">
     <div class="row">
       <!-- <div class="col-xs-12 col-md-6"> <img src="img/team.jpg" class="img-responsive" alt=""> </div> -->
+      <!-- <div class="col-xs-12 col-md-6"> <img src="img/team4.jpg" class="img-responsive" alt=""> </div>
+ -->
       <div class="col-xs-12 col-md-6"> <img src="img/team4.jpg" class="img-responsive" alt=""> </div>
 
       <div class="col-xs-12 col-md-6">

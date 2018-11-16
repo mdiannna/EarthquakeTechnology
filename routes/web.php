@@ -92,3 +92,6 @@ Route::get('/buildings-seismic-map', ['as' => 'seismic-alert-map', 'uses' =>'Bui
 
 
 Route::get('/sensors/alert-map', ['as' => 'sensors-alert-map', 'uses' => 'SensorController@alertMap']);
+
+
+Route::get('/kmeans/post', ['as' => 'post-kmeans', 'uses' => 'ClusteringController@postKmeans']);
