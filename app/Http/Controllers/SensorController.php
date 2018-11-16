@@ -72,6 +72,10 @@ class SensorController extends Controller
     }
 
     public function alertMap() {
+        return view('sensors.map_cluster');
+    }
+
+    public function alertMapWithoutClusters() {
         return view('sensors.map');
     }
 }

@@ -26,11 +26,12 @@ class ClusteringController extends Controller
       return view('before-earthquake.index');
     }
 
+
     // documentation: https://appdividend.com/2018/04/17/laravel-guzzle-http-client-example/#Step_7_Guzzle_http_client_POST_request
     public function postKmeans() 
     {
-    	$dataLngs = [44.43, 44.22, 44.34, 44.34, 44.31, 44.32, 45.34];
-    	$dataLats = [23.43, 23.22, 23.34, 23.34, 23.37, 23.24, 23.35];
+    	$dataLats = [44.43, 44.22, 44.34, 44.34, 44.31, 44.32, 45.34];
+    	$dataLngs = [23.43, 23.22, 23.34, 23.34, 23.37, 23.24, 23.35];
 
 	    $client = new \GuzzleHttp\Client();
 	    $response = $client->request('POST', 'http://0.0.0.0:5000/kmeans', [
