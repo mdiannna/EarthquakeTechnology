@@ -3,6 +3,8 @@
 @section('content')
  <link rel='stylesheet' type='text/css' href="{{asset('css/tomtom/map.css')}}"/> 
         <script src="{{asset('js/tomtom.min.js')}}"></script> 
+            <meta name="csrf-token" content="{{ csrf_token() }}" />
+
         <style>
           #map {
               height: 90vh;
@@ -11,8 +13,16 @@
         </style>
         
 <div class="row container">
+    <button onclick="clusterPoints()">
+        Cluster points
+    </button>
 	 <div id='map'></div> 
         <script> 
+
+            var lngs = [];
+            var lats = [];
+            var degrees = [];
+
             var markerOptions = 
             [
                 {
@@ -106,20 +116,98 @@
                 console.log(lng);
 
                 var marker = tomtom.L.marker(coordinates, markerOptions[degree]).addTo(map);
-                marker.bindPopup('Marker' + i);
+                marker.bindPopup('Earthquake alert' + i);
                 // marker.openPopup();
                 console.log("Marker added");
                 i++;
             }
 
             setInterval(function() {
-                var randLat = (Math.random() * (maxLat - minLat) + minLat).toFixed(7)
-                var randLng = (Math.random() * (maxLng - minLng) + minLng).toFixed(7)
+                var randLat = (Math.random() * (maxLat - minLat) + minLat).toFixed(7);
+                var randLng = (Math.random() * (maxLng - minLng) + minLng).toFixed(7);
                 var minDegree = 0;
                 var maxDegree = 5;
                 var randomDegree = Math.floor(Math.random() * (maxDegree - minDegree) + minDegree);
+
+                lngs.push(randLng);
+                lats.push(randLat);
+                // degrees.push(randomDegree);
+
               addMarker(randLat, randLng, randomDegree)
+              // console.log(lats);
+              // console.log(lngs);
             }, 4000); 
+
+            tomtom.L.polygon([[44.436718,26.100],
+                [44.536718,26.100],
+                [44.536718,26.200],
+                [44.436718,26.300]]).addTo(map);
+
+
+            function clusterPoints() {
+//                 $.post( "http://0.0.0.0:5000/kmeans", { "_token": "{{ csrf_token() }}",
+//                 _token: "{{ csrf_token() }}",    dataType: 'jsonp',
+// })
+//   .done(function( data ) {
+//     alert( "Data Loaded: " + data );
+//   });
+                // $.post( "http://0.0.0.0:5000/kmeans", function( data ) {
+                //   alert( "Data Loaded: " + data );
+                // });
+
+  //               $.ajax({
+  //                   // url: 'http://0.0.0.0:5000/kmeans',
+  //           url: 'http://dianarerise.pythonanywhere.com/kmeans',
+
+  //                   type: 'post',
+  //                   data: {
+  //                       access_token: '{{ csrf_token() }}',
+  //                       "_token": "{{ csrf_token() }}",
+  //                   },
+  //                   headers: {
+  //                       // Header_Name_One: 'Header Value One',   //If your header name has spaces or any other char not appropriate
+  //                       // "Header Name Two": 'Header Value Two'  //for object property name, use quoted notation shown in second
+  //                   },
+  //                   dataType: 'json',
+  //                   done: function( data ) {
+  //   alert( "Data Loaded: " + data );
+  // },
+  //                   success: function (data) {
+  //                       alert("data:");
+  //                       alert(data);
+  //                       console.info(data);
+  //                   }
+  //               });
+
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "http://0.0.0.0:5000/kmeans",
+                    type: 'POST',
+                    // headers: {
+                    //     // "Content-Type": "multipart/form-data"
+                    //     "Content-Type": "application/json"
+                    // },
+                    /* send the csrf-token and the input to the controller */
+                    // data: {_token: CSRF_TOKEN, message: "hello", lats: "[33]", lngs: "[44]"},
+                    data: {message: "hello", lats: JSON.stringify(lats), lngs: JSON.stringify(lngs)},
+                    // dataType: 'JSON',
+                    dataType: 'json',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                        alert(data); 
+                    }
+                })
+     .done(function(data) {
+        alert(data);
+
+                // log data to the console so we can see
+                console.log(data); 
+
+                // here we will handle errors and validation messages
+            });;
+            }
         </script> 
 </div>
 

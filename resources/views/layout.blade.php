@@ -146,12 +146,12 @@
   </div>
 </div>
 
-<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
-<script type="text/javascript" src="js/bootstrap.js"></script> 
-<script type="text/javascript" src="js/SmoothScroll.js"></script> 
-<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
-<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
-<script type="text/javascript" src="js/contact_me.js"></script> 
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="{{asset('js/jquery.1.11.1.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/SmoothScroll.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/nivo-lightbox.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/jqBootstrapValidation.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/contact_me.js')}}"></script> 
+<script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 </body>
 </html>
