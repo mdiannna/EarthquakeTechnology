@@ -14,7 +14,7 @@
         
 <div class="row container">
     <button onclick="clusterPoints()">
-        Cluster points
+        Repartizeaza echipe de interventie
     </button>
 	 <div id='map'></div> 
         <script> 
@@ -138,11 +138,7 @@
               // console.log(lngs);
             }, 4000); 
 
-            tomtom.L.polygon([[44.436718,26.100],
-                [44.536718,26.100],
-                [44.536718,26.200],
-                [44.436718,26.300]]).addTo(map);
-
+            
 
             function clusterPoints() {
 //                 $.post( "http://0.0.0.0:5000/kmeans", { "_token": "{{ csrf_token() }}",
@@ -179,11 +175,14 @@
   //                   }
   //               });
 
+  // sectors();
+
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
     $.ajax({
                     /* the route pointing to the post function */
-                    url: "http://0.0.0.0:5000/kmeans",
+                    // url: "http://0.0.0.0:5000/kmeans",
+                    url: 'http://dianarerise.pythonanywhere.com/kmeans',
                     type: 'POST',
                     // headers: {
                     //     // "Content-Type": "multipart/form-data"
@@ -195,18 +194,99 @@
                     // dataType: 'JSON',
                     dataType: 'json',
                     /* remind that 'data' is the response of the AjaxController */
-                    success: function (data) { 
-                        alert(data); 
-                    }
+                    success: function (data, status) { 
+                           // alert(data); 
+                        // alert("succes!")
+
+                        console.log(status);
+                        console.log(data);
+                        // console.log(JSON.parse(data));
+
+
+                    },
+                    error: function (error) {
+
+        // alert("error");
+        // alert(error);
+        console.log(error);
+        console.log(error.responseText);
+      },
                 })
-     .done(function(data) {
-        alert(data);
+     .done(function(data, status) {
+        // alert("DONE!")
+        // alert(data);
 
                 // log data to the console so we can see
                 console.log(data); 
 
                 // here we will handle errors and validation messages
             });;
+
+     polygons();
+            }
+
+            function compare(a,b) {
+              if (a.lat < b.lat)
+                return -1;
+              if (a.lat == b.lat && a.lng < b.lng)
+                return -1;
+              return 1;
+            }
+
+            function polygons() {
+                tomtom.L.polygon([[44.436718,26.100],
+                [44.536718,26.100],
+                [44.536718,26.200],
+                [44.436718,26.300]]).addTo(map);
+
+            tomtom.L.polygon([[44.436718,26.100],
+                [44.336718,26.100],
+                [44.336718,26.200],
+                [44.436718,26.300]]).addTo(map);
+
+             tomtom.L.polygon([[44.436718,26.100],
+                [44.536718,26.100],
+                [44.536718,26.08],
+                [44.486718,26],
+                [44.436718,25.95]]).addTo(map);
+
+            tomtom.L.polygon([[44.436718,25.9500],
+                [44.406718,25.9800],
+                [44.376718,25.9900],
+                [44.336718,26.100],
+                [44.336718,26.200],
+                [44.436718,26.300]]).addTo(map);
+
+            }
+
+            function sectors(){
+                var Points = [];
+                for(var i=0; i<lats.length; i++) {
+                    var Point = {lat: lats[i], lng: lngs[i]};
+                    Points.push(Point);
+                }
+
+                console.log(Points);
+                // alert(Points);
+                // alert(Points[0].lats);
+                
+                Points.sort(compare);
+
+                console.log(Points);
+
+                var NR_CLASSES = 5;
+                var span = Points.length / NR_CLASSES;
+                // for(var j=0; j<NR_CLASSES; j++) {
+
+
+                //     for(var k=0; k<span; k++) {
+
+                //     }
+                // }
+
+                // // alert(Points[0].lats);
+                // alert(Points.lngs);
+
             }
         </script> 
 </div>
